@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/css/app.css">
+    <title>Technical test</title>
+
+</head>
+<body>
+    <header class="header">
+
+        <div class="header-left">
+        <img class="header-menu" src="./static/svg/menu.svg" alt="menu">
+        <img class="header-logo" src="./static/svg/logo.svg" alt="logo axiacore">
+
+    </div>
+    <div class="header-right">
+        <img class="header-search" src="./static/svg/search.svg" alt="search">
+        <img class="header-cart" src="./static/svg/cart.svg" alt="cart">
+    </div>
+    </header>
+
+    <main class="main">
+        <h1 class="main-title">Cervezas</h1>
+         <div id="main-container-beers"></div>
+    </main>
+
+    
+
+    <div id="modal" class="modal-bg">
+        <div id="beer-filter-container" class="beer-filter-container">
+
+       
+
+            <h2>Filtros</h2>
+            <div class="beer-filter-container-select">
+                <label>Rubia
+                    <input  id='filterBlonde' type="checkbox">
+                </label>
+            </div>
+            <div class="beer-filter-container-select">
+                <label>Morena
+                    <input  id='filterBlack' type="checkbox">
+                </label>
+            </div>
+            <div class="beer-filter-container-select">
+                <label>Roja
+                    <input id='filterRed' type="checkbox">
+                </label>
+            </div>
+            <div class="beer-filter-container-button">
+            <button id='cleanFilter'>LIMPIAR</button>
+            <button id='applyFilter'>FILTRAR <img src="./static/svg/filters.svg" alt="cart"></button>
+            
+            </div>
+    
+    
+            <button id="closeFilter" class="close-filter"><img class="close-filter-svg" src="./static/svg/close.svg" alt="close"></button>
+            
+        </div>
+    </div>
+
+    <button id='applyFilterStick' class="apply-filter-Stick">FILTRAR <img src="./static/svg/filters.svg" alt="filter"></button>
+
+
+    <div class="wine">
+
+        <div class="wine-container">
+        
+            <div class="wine-container-item">
+                <span>Sigue mercando</span>
+                <h3>Vinos</h3>
+            </div>
+            
+            <div class="wine-container-item">
+                <img class="wine-container-item-icon" src="./static/svg/arrow-right.svg" alt="arrow">
+            </div>
+            
+            
+        </div>
+    </div>
+    <br>
+    <div class="helper">
+        <h2>¿Podemos ayudarte?</h2>
+
+        <div class="helper-container">
+        
+            <div class="helper-container-item">
+                <img class="helper-container-item-icon" src="./static/svg/intercom.svg" alt="chat">
+                <span>CHAT</span>
+            </div>
+            
+            <div class="helper-container-item">
+                <img class="helper-container-item-icon" src="./static/svg/phone.svg" alt="phone">
+                <span>LLAMAR</span>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <div class="site-map">
+        <h3>SOBRE NOSOTROS</h3>
+        <h3>MEDIDAS DE SEGURIDAD (COVID-19)</h3>
+        <h3>CÓMO MERCAR</h3>
+        <h3>PROVEEDORES</h3>
+        <h3>CONTÁCTENOS</h3>
+        <h3>ZONA DE COBERTURA</h3>  
+    </div>
+
+    <footer class="footer"> 
+        <div class="helper-container-item">
+            <img class="footer-container-item-icon" src="./static/svg/instagram.svg" alt="instagram">
+        </div>
+        <h3>POLÍTICA DE TRATAMIENTO DE DATOS PERSONALES</h3>   
+        </div>
+    </footer>
+
+    <script id="beers-template" type="text/x-handlebars-template">
+        <div class="main-container">
+        {{#each products}}
+        <div class="beer">
+            <div class="photo-beer">
+                <img src="static/img/{{img}}" alt="{{name}}">
+            </div>
+            <div class="info-column">
+                <h2>{{name}} </h2>
+                <p class="description">{{description}}</p>
+                <h3 class="price">$ {{price}}</h3>
+            </div>
+            <button id='addBeer'>AGREGAR</button>
+        </div>
+        {{/each}}
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="app.js" type="module"></script>
+    
+
+</body>
+</html>
